@@ -1,0 +1,30 @@
+# The Argus check. Runs the agent tests with Argus recording every run, then sends the run
+# cards (verdicts and the shape of the data, never values) to the team workspace, which posts
+# the "Argus" check on the pull request. No secret needed: the job proves who it is with
+# GitHub's OIDC token (id-token: write).
+name: argus
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  argus:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - uses: ArgusLabs-ai/ARGUS/.github/actions/argus-gate@v0.16.0
+        with:
+          install: "false"
+          cloud: "true"
+          cloud-url: https://app.arguslabs.in
+          pytest-args: tests/
