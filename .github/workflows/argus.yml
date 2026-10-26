@@ -26,5 +26,5 @@ jobs:
         with:
           install: "false"
           cloud: "true"
-          cloud-url: https://app.arguslabs.in
+          cloud-url: https://app.arguslabs.in/wrong
           pytest-args: tests/
