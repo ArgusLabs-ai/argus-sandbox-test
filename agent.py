@@ -41,7 +41,7 @@ def answer(state: State) -> dict:
     docs = state.get("documents") or []
     if not docs:
         return {"answer": "Thanks for reaching out! Our team will get back to you soon."}
-    return {"answer": " ".join(docs), "sources": docs}
+    return {"answer": " ".join(docs)}  # sources dropped
 
 
 def build():
