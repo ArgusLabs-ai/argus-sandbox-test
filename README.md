@@ -15,3 +15,5 @@ pull requests.
    prompt. The bot leaves one comment on the PR.
 
 `.github/workflows/argus.yml` is the whole setup: no secret, no token.
+
+<!-- baseline run 2 -->
