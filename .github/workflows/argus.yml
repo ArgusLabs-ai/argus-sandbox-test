@@ -22,7 +22,7 @@ jobs:
         with:
           python-version: "3.12"
       - run: pip install -r requirements.txt
-      - uses: ArgusLabs-ai/ARGUS/.github/actions/argus-gate@release-0.17.0
+      - uses: ArgusLabs-ai/ARGUS/.github/actions/argus-gate@v0.17.0
         with:
           install: "false"
           cloud: "true"
