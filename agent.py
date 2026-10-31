@@ -27,6 +27,7 @@ class State(TypedDict, total=False):
     question: str
     documents: list
     answer: str
+    sources: list
 
 
 def retrieve(state: State) -> dict:
@@ -40,7 +41,7 @@ def answer(state: State) -> dict:
     docs = state.get("documents") or []
     if not docs:
         return {"answer": "Thanks for reaching out! Our team will get back to you soon."}
-    return {"answer": " ".join(docs)}
+    return {"answer": " ".join(docs), "sources": docs}
 
 
 def build():
