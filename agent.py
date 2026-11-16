@@ -14,7 +14,7 @@ from typing import TypedDict
 
 from langgraph.graph import END, StateGraph
 
-BROKEN = False
+BROKEN = True
 
 ARTICLES = {
     "refund": "Refunds reach your card within 5 business days.",
